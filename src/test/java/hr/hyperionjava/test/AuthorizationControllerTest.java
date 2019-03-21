@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 @WebAppConfiguration
-public class EmployeeControllerTest {
+public class AuthorizationControllerTest {
 
     private static final String CONTENT_TYPE = "application/json;charset=UTF-8";
 
@@ -37,10 +37,10 @@ public class EmployeeControllerTest {
 
     @Test
     public void whenCreateGetEmployee_thenOk() throws Exception {
-        String employeeJson = "{\"name\":\"john\"}";
+        String authorizationJson = "{\"id\":1,\"tstamp\":1553172678528,\"pan\":\"1111112222220005\",\"mid\":\"MID0001\",\"eurocents\":1000,\"status\":\"A\",\"respcde\":\"1\"}";
 
-        this.mockMvc.perform(post("/employees").contentType(CONTENT_TYPE).content(employeeJson)).andExpect(status().isCreated());
+        this.mockMvc.perform(post("/authorizations").contentType(CONTENT_TYPE).content(authorizationJson)).andExpect(status().isCreated());
 
-        this.mockMvc.perform(get("/employees")).andExpect(status().isOk()).andExpect(content().contentType(CONTENT_TYPE)).andExpect(jsonPath("$", hasSize(2))).andExpect(jsonPath("$[0].name", is("ana"))).andExpect(jsonPath("$[1].name", is("john")));
+        this.mockMvc.perform(get("/authorizations")).andExpect(status().isOk()).andExpect(content().contentType(CONTENT_TYPE)).andExpect(jsonPath("$", hasSize(3))).andExpect(jsonPath("$[0].pan", is("1111112222220005"))).andExpect(jsonPath("$[2].pan", is("1111112222220001")));
     }
 }

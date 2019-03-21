@@ -1,1 +1,1 @@
-create table employee(id int identity primary key, name varchar(30));
+create table authorization(id int identity primary key, tstamp timestamp, pan varchar(30), mid varchar(30), eurocents int, status char, respcde int);
