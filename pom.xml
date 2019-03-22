@@ -76,10 +76,15 @@
 						<goals>
 							<goal>repackage</goal>
 						</goals>
+						<configuration>
+							<mainClass>hr.hyperionjava.Application</mainClass>
+							<outputDirectory>${project.basedir}/docker</outputDirectory>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+<!--			
+ 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
@@ -93,7 +98,8 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> 
+-->			
 		</plugins>
 	</build>
 
