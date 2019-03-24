@@ -17,4 +17,5 @@ call docker build -t authws:latest .
 PAUSE
 
 REM ------------ 6 ------------------
+REM call docker run -d --name authws_dock -v D:/Temp:/var/log/Application/ -p 8082:8082 authws:latest dev
 call docker run -d --name authws_dock -v D:/Temp:/var/log/Application/ -p 8082:8082 authws:latest

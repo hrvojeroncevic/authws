@@ -7,7 +7,7 @@ docker run -d --name authws_dock -p 8082:8082 authws:latest
 
 
 #Run with log
-docker run -d --name authws_dock -v D:/Temp:/var/log/Application/ -p 8082:8082 authws:latest 
+docker run -d --name authws_dock -v D:/Temp:/var/log/Application/ -p 8082:8082 authws:latest dev
 
 docker history authws:latest
 

@@ -9,5 +9,10 @@ COPY target/authws-0.0.1-SNAPSHOT.war /app.war
 #Copy logging setup
 COPY target/classes/logback.xml /logback.xml
 
+COPY run.sh /run.sh
+
 # run application with this command line 
 CMD ["/usr/bin/java", "-jar", "-Dspring.profiles.active=default","-Dlogging.config=/logback.xml", "/app.war"]
+
+
+#ENTRYPOINT ["/run.sh"]
